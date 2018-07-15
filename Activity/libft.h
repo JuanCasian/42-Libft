@@ -6,17 +6,19 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 12:49:22 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/13 20:29:24 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/15 12:35:11 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIBFT_H
 
 # define FT_LIBFT_H
+# define BUFSIZE 4096
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <fcntl.h>
 
 typedef struct		s_list
 {
@@ -90,5 +92,7 @@ t_list				*ft_samplelist(size_t len);
 void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+char				*input_tostr(int fd);
+void				*ft_remalloc(void *ptr, size_t size, size_t curr);
 
 #endif
