@@ -92,7 +92,7 @@ t_list				*ft_samplelist(size_t len);
 void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-char				*input_tostr(int fd);
+char				*ft_filetostr(int fd);
 void				*ft_remalloc(void *ptr, size_t size, size_t curr);
 
 #endif

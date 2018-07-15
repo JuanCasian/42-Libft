@@ -18,7 +18,7 @@
 
 #include "libft.h"
 
-char	*input_tostr(int fd)
+char	*ft_filetostr(int fd)
 {
 	char	buf[BUFSIZE];
 	int		n;
