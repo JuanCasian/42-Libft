@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 20:37:20 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/10 20:39:43 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/18 16:08:15 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	j = 0;
 	while (s1[i])
 		i++;
+	if (!s2)
+		return (s1);
 	while (s2[j] && j < n)
 	{
 		s1[i] = s2[j];

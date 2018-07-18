@@ -6,14 +6,14 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 12:49:22 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/17 15:27:15 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/18 15:55:38 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LIBFT_H
 
 # define FT_LIBFT_H
-# define BUFSIZE 4096
+# define BUFF_SIZE 4096
 
 # include <unistd.h>
 # include <stdlib.h>
