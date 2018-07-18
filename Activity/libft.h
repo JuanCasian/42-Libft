@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 12:49:22 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 12:35:11 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/17 15:27:15 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				*ft_filetostr(int fd);
 void				*ft_remalloc(void *ptr, size_t size, size_t curr);
+char				*ft_strndup(char *str, int len);
 
 #endif
