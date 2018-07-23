@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 12:49:22 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/18 15:55:38 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/23 14:27:36 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # define FT_LIBFT_H
 # define BUFF_SIZE 4096
+# define FDS 65535
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -95,5 +96,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				*ft_filetostr(int fd);
 void				*ft_remalloc(void *ptr, size_t size, size_t curr);
 char				*ft_strndup(char *str, int len);
+int					get_next_line(const int fd, char **line);
 
 #endif
