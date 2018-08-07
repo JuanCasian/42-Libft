@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_wstraddprefix.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/11 18:21:57 by jcasian           #+#    #+#             */
-/*   Updated: 2018/08/04 18:54:20 by jcasian          ###   ########.fr       */
+/*   Created: 2018/08/04 21:29:30 by jcasian           #+#    #+#             */
+/*   Updated: 2018/08/06 14:32:12 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+wchar_t	*ft_wstraddprefix(wchar_t *prefix, wchar_t *str)
 {
-	int i;
+	int		i;
+	int		j;
+	wchar_t *res;
 
+	j = 0;
 	i = 0;
-	while (s[i])
+	while (prefix[i])
+		i++;
+	while (str[j++])
+		i++;
+	if (!(res = ft_wstrnew(i)))
+		print_error();
+	j = -1;
+	while (prefix[++j])
+		res[j] = prefix[j];
+	i = 0;
+	while (str[i])
 	{
-		ft_putchar(s[i]);
+		res[j++] = str[i];
 		i++;
 	}
+	free(str);
+	return (res);
 }

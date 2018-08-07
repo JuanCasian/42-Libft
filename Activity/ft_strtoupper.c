@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/11 18:21:57 by jcasian           #+#    #+#             */
-/*   Updated: 2018/08/04 18:54:20 by jcasian          ###   ########.fr       */
+/*   Created: 2018/08/05 13:41:45 by jcasian           #+#    #+#             */
+/*   Updated: 2018/08/05 13:56:58 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_strtoupper(char **str)
 {
 	int i;
 
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	i = -1;
+	while (str[0][++i])
+		str[0][i] = ft_toupper(str[0][i]);
 }
