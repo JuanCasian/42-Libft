@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 12:49:22 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/23 14:27:36 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/08/13 18:16:34 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # define FT_LIBFT_H
 # define BUFF_SIZE 4096
+# define BUFF_SIZE_IN 1
 # define FDS 65535
 # define NFLAGS 5
 # define NLENS 6
@@ -32,7 +33,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef struct	s_info
+typedef struct		s_info
 {
 	int		flags[NFLAGS];
 	int		width;
@@ -44,9 +45,9 @@ typedef struct	s_info
 	int		count;
 	char	*res;
 	wchar_t	*wres;
-}				t_info;
+}					t_info;
 
-enum			e_flags
+enum				e_flags
 {
 	Fminus,
 	Fplus,
@@ -55,7 +56,7 @@ enum			e_flags
 	Fzero
 };
 
-enum			e_lengths
+enum				e_lengths
 {
 	Lhh,
 	Lh,
@@ -134,42 +135,44 @@ char				*ft_filetostr(int fd);
 void				*ft_remalloc(void *ptr, size_t size, size_t curr);
 char				*ft_strndup(char *str, int len);
 int					get_next_line(const int fd, char **line);
-wchar_t			*ft_wstrdup(wchar_t *wstr);
-int				ft_wchar_len(wchar_t wc);
-int				ft_wstrlen(wchar_t *wstr);
-char			*ft_straddprefix(char *prefix, char *str);
-char			*ft_straddsuffix(char *suffix, char *str);
-wchar_t			*ft_wstraddsuffix(wchar_t *suffix, wchar_t *str);
-wchar_t			*ft_wstraddprefix(wchar_t *prefix, wchar_t *str);
-void			print_error(void);
-wchar_t			*ft_wstrnew(size_t	size);
-int				ft_putwchar(wchar_t wc);
-char			*ft_utoabaselonglong(unsigned long long int n,
+wchar_t				*ft_wstrdup(wchar_t *wstr);
+int					ft_wchar_len(wchar_t wc);
+int					ft_wstrlen(wchar_t *wstr);
+char				*ft_straddprefix(char *prefix, char *str);
+char				*ft_straddsuffix(char *suffix, char *str);
+wchar_t				*ft_wstraddsuffix(wchar_t *suffix, wchar_t *str);
+wchar_t				*ft_wstraddprefix(wchar_t *prefix, wchar_t *str);
+void				print_error(void);
+wchar_t				*ft_wstrnew(size_t	size);
+int					ft_putwchar(wchar_t wc);
+char				*ft_utoabaselonglong(unsigned long long int n,
 		unsigned long long int base);
-void			ft_strtoupper(char **str);
-char			*ft_itoalonglong(long long int n);
-int				ft_printf(char *format, ...);
-void			initialize_struct(t_info *info, char **str, va_list *args);
-void			check_for_flags(t_info *info);
-void			check_for_width(t_info *info);
-void			check_for_preci(t_info *info);
-void			check_for_lengths(t_info *info);
-void			check_for_speci(t_info *info);
-void			reinit_structure(t_info *info);
-void			reinit_lengths(t_info *info);
-int				is_flag(char c);
-int				is_width(char c);
-int				is_preci(char c);
-int				is_length(char c);
-int				is_speci(char c);
-void			prepare_str(t_info *info);
-void			prepare_percentage(t_info *info);
-void			prepare_address(t_info *info);
-void			prepare_hexadecimal(t_info *info);
-void			prepare_undecimal(t_info *info);
-void			prepare_octal(t_info *info);
-void			prepare_binary(t_info *info);
-void			prepare_signed(t_info *info);
-void			prepare_char(t_info *info);
+void				ft_strtoupper(char **str);
+char				*ft_itoalonglong(long long int n);
+int					ft_printf(char *format, ...);
+void				initialize_struct(t_info *info, char **str, va_list *args);
+void				check_for_flags(t_info *info);
+void				check_for_width(t_info *info);
+void				check_for_preci(t_info *info);
+void				check_for_lengths(t_info *info);
+void				check_for_speci(t_info *info);
+void				reinit_structure(t_info *info);
+void				reinit_lengths(t_info *info);
+int					is_flag(char c);
+int					is_width(char c);
+int					is_preci(char c);
+int					is_length(char c);
+int					is_speci(char c);
+void				prepare_str(t_info *info);
+void				prepare_percentage(t_info *info);
+void				prepare_address(t_info *info);
+void				prepare_hexadecimal(t_info *info);
+void				prepare_undecimal(t_info *info);
+void				prepare_octal(t_info *info);
+void				prepare_binary(t_info *info);
+void				prepare_signed(t_info *info);
+void				prepare_char(t_info *info);
+int					ft_countcharsrepetition(char *str, char c);
+int					get_next_line_sin(const int fd, char **line);
 
 #endif

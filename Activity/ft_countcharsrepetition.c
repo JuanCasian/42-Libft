@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_countcharsrepetition.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/12 19:25:58 by jcasian           #+#    #+#             */
-/*   Updated: 2018/08/10 16:56:13 by jcasian          ###   ########.fr       */
+/*   Created: 2018/08/10 13:52:12 by jcasian           #+#    #+#             */
+/*   Updated: 2018/08/10 13:53:24 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include "libft.h"
-
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int		ft_countcharsrepetition(char *str, char c)
 {
-	char	*res;
-	size_t	i;
+	int	count;
 
-	if (!s)
-		return (NULL);
-	i = 0;
-	res = ft_strnew(len);
-	if (!res)
-		return (NULL);
-	while (i < len)
+	count = 0;
+	while (*str)
 	{
-		res[i] = s[start];
-		i++;
-		start++;
+		if (*str == c)
+			count++;
+		str++;
 	}
-	return (res);
+	return (count);
 }
